@@ -10,7 +10,7 @@
             Projects, About Contacts
         </header>
 
-        <h1>Hi! I'm Mark Do</h1>
+        <h1>Hi! I'm Mark</h1>
         
         <h2></h2>
         <p>Mechanical Engineering Student @ University of Waterloo</p>
