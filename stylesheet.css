@@ -1,4 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+
 body {
+    margin: 0px;
+
+    background-color: #383838;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri;
     color:#F1FFFA;
-    background-color: #454545;
+}
+
+nav {
+    background-color: #272727;
+
+    position:fixed;
+    width:100%;
+    align-items: center;
+    padding: 10px 10%;
+    
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+
+}
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+    color:#F1FFFA;
+
+    font-weight:500;
+    font-size: 36px;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+.nav-links li a:hover {
+    color: #0088a9
+}
+
+
+.introduction {
+    background-color: #26547ca6;
+    background-size: cover;
+    width:100%;
+    height:800px;
+
+    padding-bottom: 50px;
+    padding-top: 100px;
+
+    text-align: center;
+}
+
+#first-line {
+    font-size:125px; 
+    font-weight: bold;
+}
+
+.blurb {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    
+}
+
+.project-section {
+    margin:50px;
+}
+
+.project-section header{
+    overflow: hidden;
+}
+
+.project-section h1 {
+    display:inline-block;
+    margin-top: 50px;
+    border-bottom: 0.1em solid #F1FFFA;
+    padding-bottom: 15px;
+    width:60%; 
+    
+    font-size:80px;
+}
+
+.project-section h3 {
+    display:inline-block;
+    margin-top: 60px;
+    width: 30%;
+
+    text-align:right;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.project-instance {
+    background-color: grey;
+    border-radius: 50px;
+
+    margin-bottom:200px;
+    padding-left:10%;
+    padding-right:10%;
+    padding-bottom:50px;
+    clear: both;
+    overflow: hidden;
+    
+}
+
+.project-instance h2 {
+    clear: both;
+    border-bottom: 0.1em solid #F1FFFA;
+    padding-bottom: 0.3em;
+    margin-bottom: 1em;
+    width:15em;
+
+    text-align: left;
+    font-size: 40px;
+
+    color: #F1FFFA;
+}
+
+.project-img {
+    float: left;
+    width: 40%;
+    
+}
+
+.project-instance p {
+    float: right;
+    font-size: 25px;
+    width:40%;
+}
+
+footer {
+    clear:both;
 }
