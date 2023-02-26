@@ -41,6 +41,7 @@ nav {
 
 .introduction {
     background-color: #26547ca6;
+    background: url("https://raw.githubusercontent.com/hepromark/Hepromark.github.io/main/images/test_img.jpg");
     background-size: cover;
     width:100%;
     height:800px;
