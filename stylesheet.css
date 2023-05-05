@@ -186,12 +186,6 @@ nav {
     padding-bottom: 200px;
 }
 
-.end-card-contents {
-    /* float:left; */
-    padding-left: 50px;
-    max-width: 40%;
-}
-
 #end-card h2 {
     color: black; 
     font-size: 70px;
@@ -201,6 +195,18 @@ nav {
     color: black; 
 }
 
-/* .end-card-links {
+.end-card-contents {
+    float:left;
+    padding-left: 50px;
+    max-width: 40%;
+}
+
+.end-card-links {
     float: right;
-} */
+    padding-right: 50px;
+    max-width: 40%;
+}
+
+.icon-links {
+    width: 60px;
+}
