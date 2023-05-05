@@ -10,7 +10,6 @@ html {
 }
 
 /*GENERAL*/
-
 body {
     background-color: #1b1b1b;
     margin: 0px;
@@ -33,8 +32,20 @@ h3 {
     color:#0088a9;
 }
 
-/*NAVIGATION BAR*/
+a:link {
+    transition: all 0.3s ease 0s;
+    font-size:40px;
+    color: #0088a9;
+}
+.a:visited {
+    color:#3000a9;
+}
+a:hover {
+    color:#8d00a9;
+    font-size:43px;
+}
 
+/*NAVIGATION BAR*/
 nav {
     background-color: #242424;
 
@@ -159,21 +170,8 @@ nav {
     width:50% */
     text-align: right;
 }
-.evidence a:link{
-    transition: all 0.3s ease 0s;
-    font-size:33px;
-    color:#0088a9;
-}
-.evidence a:visited{
-    color:#3000a9;
-}
-.evidence a:hover{
-    color:#8d00a9;
-    font-size:35px;
-}
 
 /*END CARD*/
-
 #end-card {
     clear:both;
     background-color: white;
@@ -198,7 +196,7 @@ nav {
     /* float:left; */
     text-align: right;
     padding-right: 50px;
-    padding-left: 10%;
+    padding-left: 8%;
     max-width: 40%;
     border-right: 5px solid rgb(123, 167, 169);
 }
@@ -211,17 +209,4 @@ nav {
 
 .icon-links {
     width: 60px;
-}
-
-.end-card-links a:link{
-    transition: all 0.3s ease 0s;
-    font-size:40px;
-    color: #0088a9;
-}
-.end-card-links a:visited{
-    color:#3000a9;
-}
-.end-card-links a:hover{
-    color:#8d00a9;
-    font-size:43px;
 }
