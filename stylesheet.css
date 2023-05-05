@@ -29,7 +29,7 @@ h2 {
 h3 {
     font-family: 'Raleway', sans-serif;
     font-size: 35px;
-    font-weight: 500;
+    font-weight: 700;
     color:#0088a9;
 }
 
@@ -124,10 +124,9 @@ nav {
 
 .project-instance {
     
-    margin-bottom:200px;
-    padding-left:10%;
-    padding-right:10%;
-    padding-bottom:20px;
+    margin-bottom:30px;
+    padding-left:5%;
+    padding-right:5%;
     clear: both;
     overflow: auto;
     
@@ -153,11 +152,12 @@ nav {
 }
 
 /*EVIDENCE*/
-/* .evidence {
-    border-top: 0.2em solid white;
+.evidence {
+    /* border-top: 0.2em solid white;
     padding-top: 2.5em;
-    width:50%
-} */
+    width:50% */
+    text-align: right;
+}
 .evidence a:link{
     transition: all 0.3s ease 0s;
     font-size:40px;
@@ -179,9 +179,28 @@ nav {
 #end-card {
     clear:both;
     background-color: white;
+    background: url("https://raw.githubusercontent.com/hepromark/Hepromark.github.io/main/images/mountain.jpg");
+    background-size:cover;
+
+    padding-top: 20px;
+    padding-bottom: 200px;
+}
+
+.end-card-contents {
+    /* float:left; */
+    padding-left: 50px;
+    max-width: 40%;
 }
 
 #end-card h2 {
-    padding-left: 200px;
-
+    color: black; 
+    font-size: 70px;
 }
+
+#end-card h3 {
+    color: black; 
+}
+
+/* .end-card-links {
+    float: right;
+} */
