@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
+/* FUNNY STUFF */
 html {
     scroll-behavior: smooth;
 }
+
+.clearfix {
+    overflow: auto;
+}
+
+/*GENERAL*/
 
 body {
     background-color: #1b1b1b;
@@ -25,6 +32,8 @@ h3 {
     font-weight: 500;
     color:#0088a9;
 }
+
+/*NAVIGATION BAR*/
 
 nav {
     background-color: #242424;
@@ -58,9 +67,10 @@ nav {
 .nav-links li a:hover {
     color: #0088a9;
     border-color: #0088a9;
-    font-size:35px;
+    font-size:33px;
 }
 
+/*INTRODUCTION*/
 
 .introduction {
     background: url("https://raw.githubusercontent.com/hepromark/Hepromark.github.io/main/images/wallpaperflare.com_wallpaper%20(4).jpg");
@@ -85,12 +95,10 @@ nav {
     color:#F1FFFA;
 }
 
+/*PROJECTS*/
+
 .project-section {
     margin:50px;
-}
-
-.project-section header{
-    overflow: hidden;
 }
 
 .project-section h1 {
@@ -112,19 +120,20 @@ nav {
     width: 30%;
 }
 
-.project-instance {
+/*PROJECT ENTRIES*/
 
+.project-instance {
+    
     margin-bottom:200px;
     padding-left:10%;
     padding-right:10%;
-    padding-bottom:50px;
+    padding-bottom:20px;
     clear: both;
-    overflow: hidden;
+    overflow: auto;
     
 }
 
 .project-instance h2 {
-    clear: both;
     margin-bottom: 1em;
     width:15em;
     text-align: left;
@@ -142,6 +151,30 @@ nav {
     font-size: 25px;
     width:40%;
 }
+
+/*EVIDENCE*/
+/* .evidence {
+    border-top: 0.2em solid white;
+    padding-top: 2.5em;
+    width:50%
+} */
+.evidence a:link{
+    transition: all 0.3s ease 0s;
+    font-size:40px;
+    color:#0088a9;
+    color:white;
+}
+.evidence a:visited{
+    color:#3000a9;
+    color:#0088a9;
+    color:white;
+}
+.evidence a:hover{
+    color:#0088a9;
+    font-size:43px;
+}
+
+/*END CARD*/
 
 #end-card {
     clear:both;
