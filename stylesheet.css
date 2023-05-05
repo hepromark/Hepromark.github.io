@@ -70,6 +70,7 @@ nav {
     font-size:33px;
 }
 
+
 /*INTRODUCTION*/
 
 .introduction {
@@ -160,18 +161,15 @@ nav {
 }
 .evidence a:link{
     transition: all 0.3s ease 0s;
-    font-size:40px;
+    font-size:33px;
     color:#0088a9;
-    color:white;
 }
 .evidence a:visited{
     color:#3000a9;
-    color:#0088a9;
-    color:white;
 }
 .evidence a:hover{
-    color:#0088a9;
-    font-size:43px;
+    color:#8d00a9;
+    font-size:35px;
 }
 
 /*END CARD*/
@@ -182,13 +180,13 @@ nav {
     background: url("https://raw.githubusercontent.com/hepromark/Hepromark.github.io/main/images/mountain.jpg");
     background-size:cover;
 
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 200px;
 }
 
 #end-card h2 {
     color: black; 
-    font-size: 70px;
+    font-size: 80px;
 }
 
 #end-card h3 {
@@ -196,17 +194,34 @@ nav {
 }
 
 .end-card-contents {
-    float:left;
-    padding-left: 50px;
+    display: inline-block;
+    /* float:left; */
+    text-align: right;
+    padding-right: 50px;
+    padding-left: 10%;
     max-width: 40%;
+    border-right: 5px solid rgb(123, 167, 169);
 }
 
 .end-card-links {
-    float: right;
-    padding-right: 50px;
-    max-width: 40%;
+    display: inline-block;
+    /* float: right; */
+    line-height: 20px;
 }
 
 .icon-links {
     width: 60px;
+}
+
+.end-card-links a:link{
+    transition: all 0.3s ease 0s;
+    font-size:40px;
+    color: #0088a9;
+}
+.end-card-links a:visited{
+    color:#3000a9;
+}
+.end-card-links a:hover{
+    color:#8d00a9;
+    font-size:43px;
 }
