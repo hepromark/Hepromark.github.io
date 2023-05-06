@@ -85,7 +85,7 @@ nav {
 /*INTRODUCTION*/
 
 .introduction {
-    background: url("https://raw.githubusercontent.com/hepromark/Hepromark.github.io/main/images/astronaut.jpg");
+    background: url("https://raw.githubusercontent.com/hepromark/Hepromark.github.io/main/images/pink.jpg");
     background-size:cover;
     width:100%;
     height:800px;
@@ -105,12 +105,21 @@ nav {
 .blurb {
     font-size: 40px;
     color:#F1FFFA;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F1FFFA;
+    margin-left: 25%;
+    margin-right: 25%;
+
 }
 
+.introduction h2 {
+    margin-top:50px
+}
 /*PROJECTS*/
 
 .project-section {
     margin:50px;
+    margin-bottom: 150px;
 }
 
 .project-section h1 {
@@ -209,4 +218,8 @@ nav {
 
 .icon-links {
     width: 60px;
+}
+
+.end-card-links a:hover {
+    width: 70px;
 }
