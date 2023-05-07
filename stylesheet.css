@@ -240,15 +240,15 @@ nav {
     background-size:cover;
     background-position-x: 400px;
     text-align: left;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
 }
 
 .about-right {
-    background: url("https://raw.githubusercontent.com/hepromark/Hepromark.github.io/main/images/wallpaperflare.com_wallpaper%20(5).jpg");
+    background: url("https://raw.githubusercontent.com/hepromark/Hepromark.github.io/main/images/wallpaperflare.com_wallpaper%20(8).jpg");
     background-size:cover;
     background-position-x: 0px;
     text-align: right;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
 
 }
 
