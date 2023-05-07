@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@200&display=swap');
+
+
+/* * {
+    margin: 0;
+} */
 
 /* FUNNY STUFF */
 html {
@@ -13,10 +19,15 @@ html {
 body {
     background-color: #1b1b1b;
     margin: 0px;
+    padding: 0px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri;
     font-weight: 500;
     color:#F1FFFA;
-    
+}
+
+h1 {
+    font-size: 80px;
+    color: #F1FFFA; 
 }
 
 h2 {
@@ -48,7 +59,6 @@ a:hover {
 /*NAVIGATION BAR*/
 nav {
     background-color: #242424;
-
     position:fixed;
     width:100%;
     align-items: center;
@@ -223,3 +233,62 @@ nav {
 .end-card-links a:hover {
     width: 70px;
 }
+
+/* ABOUT ME PAGE */
+.about-left {
+    background: url("https://raw.githubusercontent.com/hepromark/Hepromark.github.io/main/images/astronaut.jpg");
+    background-size:cover;
+    background-position-x: 400px;
+    text-align: left;
+    padding-bottom: 100px;
+}
+
+.about-right {
+    background: url("https://raw.githubusercontent.com/hepromark/Hepromark.github.io/main/images/wallpaperflare.com_wallpaper%20(5).jpg");
+    background-size:cover;
+    background-position-x: 0px;
+    text-align: right;
+    padding-bottom: 100px;
+
+}
+
+.about-contents-left {
+    width: 50%;
+    border-top: 5px solid #F1FFFA;
+    margin-left:3%;
+    margin-top: 10px;
+    padding-bottom:250px;
+}
+
+.about-contents-right {
+    width: 50%;
+    border-top: 5px solid #F1FFFA;
+    margin-left:47%;
+    margin-top: 10px;
+    padding-bottom:250px;
+}
+
+.about-left h1 {
+    margin:0px;
+    padding-top: 100px;
+    padding-left: 3%;
+}
+
+.about-right h1 {
+    margin:0px;
+    padding-top: 100px;
+    padding-right: 3%;
+}
+
+.about-left h2 {
+    font-family: Montserrat;
+    font-size: 30px;
+}
+
+.about-right h2 {
+    font-family: Montserrat;
+    font-size: 30px;
+}
+
+
+
