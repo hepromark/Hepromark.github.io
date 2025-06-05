@@ -1,0 +1,1 @@
+A 2-axis gantry system that interprets digital images and draws them using contour detection, Canny edge filters, and PID motion control firmware written in C. 

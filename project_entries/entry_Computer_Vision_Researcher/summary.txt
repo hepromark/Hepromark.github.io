@@ -1,0 +1,1 @@
+Researching novel 3D-reconstruction, Structure-From-Motion & visual SLAM models for construction site modelling using drones. Implemented a VIT-based, End-to-End deep learning model which output 3D point maps directly from images, resulting in robust performance in low texture & ambiguous lighting conditions by leveraging its inherent 3D scene understanding.

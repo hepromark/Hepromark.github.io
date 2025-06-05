@@ -1,0 +1,1 @@
+Developed a clustering module for an autonomous drone to cluster landing pad detections & predict actual pad locations. Implemented a Variational Gaussian mixture model to consume pad locations over time and continuously output estimates.

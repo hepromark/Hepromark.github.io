@@ -1,0 +1,1 @@
+A deep learning model trained on 64-channel EEG time series data transformed into spectrogram volumes for 3D CNN input. Optimized data handling through PyTorch custom samplers reading from HDF5. 

@@ -54,7 +54,58 @@ window.addEventListener('scroll', function() {
     });
 });
 
-// Load projects from project_entries folder
+// Gallery functionality
+let currentGallery = [];
+let currentImageIndex = 0;
+
+async function loadGalleryImages(projectFolder) {
+    try {
+        const response = await fetch(`/project_entries/${projectFolder}/gallery/`);
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        
+        // Get all image files and fix the URL construction
+        const images = Array.from(doc.querySelectorAll('a'))
+            .filter(a => a.href.match(/\.(png|jpg|jpeg|gif)$/i))
+            .map(a => `/project_entries/${projectFolder}/gallery/${a.href.split('/').pop()}`);
+        
+        return images;
+    } catch (error) {
+        console.error('Error loading gallery:', error);
+        return [];
+    }
+}
+
+function showGallery(images) {
+    if (images.length === 0) return;
+    
+    currentGallery = images;
+    currentImageIndex = 0;
+    
+    const galleryImages = document.querySelector('.gallery-images');
+    galleryImages.innerHTML = `<img src="${images[0]}" alt="Gallery image">`;
+    
+    const popup = document.getElementById('gallery-popup');
+    popup.classList.add('active');
+}
+
+function updateGalleryImage() {
+    const galleryImages = document.querySelector('.gallery-images');
+    galleryImages.innerHTML = `<img src="${currentGallery[currentImageIndex]}" alt="Gallery image">`;
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+    updateGalleryImage();
+}
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+    updateGalleryImage();
+}
+
+// Update the loadProjects function to add click handlers
 async function loadProjects() {
     try {
         const response = await fetch('/project_entries/');
@@ -62,22 +113,17 @@ async function loadProjects() {
         const parser = new DOMParser();
         const doc = parser.parseFromString(entries, 'text/html');
         
-        // Get all entry folders and filter out any non-entry links
         const projectFolders = Array.from(doc.querySelectorAll('a'))
             .filter(a => a.href.includes('entry_'))
             .map(a => a.href.split('/').filter(part => part.includes('entry_'))[0]);
 
-        console.log('Found project folders:', projectFolders); // Debug log
-        
         const projectGrid = document.getElementById('project-grid');
         
         for (const folder of projectFolders) {
-            if (!folder) continue; // Skip if folder is undefined
+            if (!folder) continue;
             
             const projectName = folder.replace('entry_', '');
-            console.log('Processing project:', projectName); // Debug log
             
-            // Load project details
             const [summaryResponse, githubResponse] = await Promise.all([
                 fetch(`/project_entries/${folder}/summary.txt`),
                 fetch(`/project_entries/${folder}/github.txt`)
@@ -86,11 +132,9 @@ async function loadProjects() {
             const summary = await summaryResponse.text();
             const githubUrl = await githubResponse.text();
             
-            // Create project card
             const projectCard = document.createElement('div');
             projectCard.className = 'project-card';
             
-            // Get image file (assuming it's the only image in the folder)
             const imageResponse = await fetch(`/project_entries/${folder}/`);
             const imageDoc = parser.parseFromString(await imageResponse.text(), 'text/html');
             const imageFile = Array.from(imageDoc.querySelectorAll('a'))
@@ -101,9 +145,7 @@ async function loadProjects() {
                 continue;
             }
 
-            // Extract just the filename from the href
             const imageFileName = imageFile.href.split('/').pop();
-            console.log('Image file name:', imageFileName); // Debug log
             
             projectCard.innerHTML = `
                 <img src="/project_entries/${folder}/${imageFileName}" alt="${projectName}">
@@ -114,6 +156,15 @@ async function loadProjects() {
                 </div>
             `;
             
+            // Add click handler for gallery
+            projectCard.addEventListener('click', async (e) => {
+                // Don't trigger if clicking on the GitHub link
+                if (e.target.classList.contains('button')) return;
+                
+                const images = await loadGalleryImages(folder);
+                showGallery(images);
+            });
+            
             projectGrid.appendChild(projectCard);
         }
     } catch (error) {
@@ -122,5 +173,43 @@ async function loadProjects() {
     }
 }
 
-// Load projects when the page loads
-document.addEventListener('DOMContentLoaded', loadProjects); 
+// Add event listeners for gallery controls
+document.addEventListener('DOMContentLoaded', () => {
+    const popup = document.getElementById('gallery-popup');
+    const closeBtn = document.querySelector('.gallery-close');
+    const prevBtn = document.querySelector('.gallery-prev');
+    const nextBtn = document.querySelector('.gallery-next');
+    
+    closeBtn.addEventListener('click', () => {
+        popup.classList.remove('active');
+    });
+    
+    prevBtn.addEventListener('click', prevImage);
+    nextBtn.addEventListener('click', nextImage);
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('active')) {
+            popup.classList.remove('active');
+        } else if (e.key === 'ArrowLeft' && popup.classList.contains('active')) {
+            prevImage();
+        } else if (e.key === 'ArrowRight' && popup.classList.contains('active')) {
+            nextImage();
+        }
+    });
+    
+    // Close on click outside
+    popup.addEventListener('click', (e) => {
+        // Don't close if clicking on the image, navigation buttons, or close button
+        if (e.target === popup || 
+            e.target.closest('.gallery-images') || 
+            e.target.closest('.gallery-nav') ||
+            e.target.closest('.gallery-close')) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+            }
+        }
+    });
+    
+    loadProjects();
+}); 

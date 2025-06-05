@@ -1,0 +1,1 @@
+An ESP8266-based wireless monitoring system that publishes sensor data via MQTT to AWS IoT Core. Alerts are triggered via Lambda + SNS when thresholds are breached. 

@@ -1,0 +1,1 @@
+A wearable assistive vision system for the visually impaired that integrates YOLOv8, directional 3D audio, and speech-to-text using Google Cloud. Built on an NVIDIA Jetson with an asynchronous architecture for low-latency perception and audio output. 
